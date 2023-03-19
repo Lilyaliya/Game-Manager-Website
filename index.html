@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="css/style.css">
         <!--Добавляем шрифт с boxicons-->
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!--Ссылка на swiper файл (слайдер)-->
+        <link rel="stylesheet" href="css/swiper-bundle.min.css">
     </head>
     <body>
         <!--Заголовок-->
@@ -32,7 +34,7 @@
                 <img src="img/menu.png" alt="">
                 <div class="navbar">
                     <li><a href="index.html">Главная</a></li>
-                    <li><a href="#trending">В тренде</a></li>
+                    <li><a href="#trending">Популярное</a></li>
                     <li><a href="#new">Новинки</a></li>
                     <li><a href="#action">Экшн</a></li>
                     <li><a href="#contact">Для связи</a></li>
@@ -59,6 +61,107 @@
             </div>
         </section>
         <!--Домашняя страница конец-->
+        <!--Популярное начало-->
+        <section class="trending container" id="trending">
+            <div class="heading">
+                <i class='bx bxs-flame' ></i>
+                <h2>Популярные игры</h2>
+
+            </div>
+            <!--Контент, наполнение-->
+            <div class="trending-content swiper">
+                <div class="swiper-wrapper">
+                    <!--Слайд 1-->
+                    <div class="swiper-slide">
+                        <div class="box">
+                            <img src="img/trending1.webp" alt="">
+                            <div class="box-text">
+                                <h2>Cyberpunk 2077</h2>
+                                <h3>Экшн</h3>
+                                <div class="rating-download">
+                                    <div class="rating">
+                                        <i class='bx bxs-star' ></i>
+                                        <span>4.7</span>
+                                    </div>
+                                    <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Слайд 2-->
+                    <div class="swiper-slide">
+                        <div class="box">
+                            <img src="img/trending1.webp" alt="">
+                            <div class="box-text">
+                                <h2>Cyberpunk 2077</h2>
+                                <h3>Экшн</h3>
+                                <div class="rating-download">
+                                    <div class="rating">
+                                        <i class='bx bxs-star' ></i>
+                                        <span>4.7</span>
+                                    </div>
+                                    <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                <!--Слайд 3-->
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="img/trending1.webp" alt="">
+                        <div class="box-text">
+                            <h2>Cyberpunk 2077</h2>
+                            <h3>Экшн</h3>
+                            <div class="rating-download">
+                                <div class="rating">
+                                    <i class='bx bxs-star' ></i>
+                                    <span>4.7</span>
+                                </div>
+                                <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Слайд 4-->
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="img/trending1.webp" alt="">
+                        <div class="box-text">
+                            <h2>Cyberpunk 2077</h2>
+                            <h3>Экшн</h3>
+                            <div class="rating-download">
+                                <div class="rating">
+                                    <i class='bx bxs-star' ></i>
+                                    <span>4.7</span>
+                                </div>
+                                <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Слайд 1-->
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="img/trending1.webp" alt="">
+                        <div class="box-text">
+                            <h2>Cyberpunk 2077</h2>
+                            <h3>Экшн</h3>
+                            <div class="rating-download">
+                                <div class="rating">
+                                    <i class='bx bxs-star' ></i>
+                                    <span>4.7</span>
+                                </div>
+                                <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Популярное конец-->
+        <!--Ссылка на Swiper (слайдер для просмотра популярных игр)-->
+        <script src="js/swiper-bundle.min.js"></script>
         <!--Поключение скриптов-->
         <script src="js/main.js"></script>
     </body>
