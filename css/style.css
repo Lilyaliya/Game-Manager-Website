@@ -352,5 +352,38 @@ a, u {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, auto));
     gap: 1.2rem;
+
+  }
+  .next-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+
+  }
+  .next-page a{
+    background: var(--main-color);
+    padding: 12px 20px;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    font-weight: 500rem;
+
+
+  }
+  .next-page a:hover{
+    background: var(--light-color);
+    transition: 0.3s all linear;
+
+  }
+
+  .copyright{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+  }
+  .copyright p{
+    font-size: 0.9rem;
+    color: var(--text-color);
     
   }
