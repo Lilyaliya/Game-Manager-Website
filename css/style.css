@@ -345,5 +345,12 @@ a, u {
   }
   .box-btn .bx:hover{
     background: var(--dark-color);
+
+  }
+/*Новинки*/
+  .new-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+    gap: 1.2rem;
     
   }
