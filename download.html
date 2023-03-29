@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Download Page</title>
+        <link rel = "shortcut icon" href="img/fav.png" type="image/x-icon">
+        <!--Ссылка на CSS-->
+        <link rel="stylesheet" href="css/style.css">
+        <!--Добавляем шрифт с boxicons-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!--Ссылка на swiper файл (слайдер)-->
+        <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    </head>
+    <body>
+        <!--Заголовок-->
+        <header>
+            <!--Nav Bar-->
+            <div class="nav-icons">
+                <!--Логотип-->
+                <a href="index.html" class="logo">Game<span>Manager</span></a>
+                <div class="nav-icons">
+                    <i class='bx bx-bell bx-tada' id="bell-icon"><span></span></i>
+                    <i class='bx bxs-download' ></i>
+                    <div class="menu-icon" >
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu">
+                <img src="img/menu.png" alt="">
+                <div class="navbar">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="#trending">Популярное</a></li>
+                    <li><a href="#new">Новинки</a></li>
+                    <li><a href="#action">Экшн</a></li>
+                    <li><a href="#contact">Для связи</a></li>
+                </div>
+            </div>
+            <!--Уведомления-->
+            <div class="notification">
+                <div class="notification-box">
+                    <i class='bx bxs-check-circle' ></i>
+                    <p>Поздравляем, ваша игра успешно загружена.</p>
+                </div>
+                <div class="notification-box box-color">
+                    <i class='bx bxs-x-circle' ></i>
+                    <p>Изменения не были внесены.</p>
+                </div>
+            </div>
+        </header>
+       <!--Видеоролик-->
+       <div class="video-container container">
+        <video src="download-files/Subway Surfers Official.mp4" muted autoplay></video>
+       </div>
+       <!--Аннотация к игре-->
+       <div class="about container">
+        <h2>Информация об игре</h2>
+        <p>Subway Surfers — видеоигра в жанре бесконечного раннера, разработанная и изданная Kiloo& SYBO. Игрок берет на себя роль обычного подростка (или, в редких случаях, молодого человека), совершающего акты вандализма над поездом метро, его ловят Инспектор и его собака. Игрок же должен от них убежать. В обновлении были добавили ключи (), которые оживляют персонажа, если он решит их использовать. Игра доступна на платформах iOS и Android.</p>
+       </div>
+        <!--Копирайт-->
+        <div class="copyright container">
+            <a href="#" class="logo">GAME<span>MANAGER</span></a>
+            <p>&#169; Lyn's_Soft All Right Reserved</p>
+        </div>
+
+        <!--Ссылка на Swiper (слайдер для просмотра популярных игр)-->
+        <script src="js/swiper-bundle.min.js"></script>
+        <!--Поключение скриптов-->
+        <script src="js/main.js"></script>
+    </body>
+</html>
