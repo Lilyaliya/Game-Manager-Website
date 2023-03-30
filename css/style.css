@@ -103,38 +103,49 @@ header{
     right: 14px;
 
 }
-/**/
-.menu-icon{
-    display: flex;
+
+.menu-icon div {
+  /* display: block;  */
+ /* position:relative; */
+ background: var(--text-color);
+ height: 2px;
+  margin: 10px 10px 10px 10px; 
+  width: 25px; 
+ transition: 0.3s; 
+}
+
+ .menu-icon{
+    display: block; 
     position: relative;
     flex-direction: center;
     align-items: center;
     justify-content: center;
-    row-gap: 5px;
+    /* row-gap: 5px; */
     height: 44px;
     width: 44px;
-    border-radius: 50%;
+    border-radius: 100%;
     background: var(--light-color);
     cursor: pointer;
     z-index: 200;
     transition: 0.3s;
-}
-.menu-icon div {
-    display: block;
-    position:fixed;
-    background: var(--text-color);
-    height: 2px;
-    width: 25px;
-    transition: 0.3s;
-}
+} 
+
+
+
+/*.move .a{
+display: none;
+}*/
 .move .line3{
-    transform: rotate(-45deg) ;
+  /*display: none;*/
+  
+    transform: rotate(45deg) translate(-10px, -7px);
 }
 .move .line2{
     opacity: 0;
 }
 .move .line1{
-    transform: rotate(45deg) ;
+  
+    transform: rotate(-45deg) translate(-10px, 7px);
 }
 .menu{
     position: fixed;
