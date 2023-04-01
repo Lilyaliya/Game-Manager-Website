@@ -3,7 +3,6 @@ let navbar = document.querySelector('.menu');
 menu.onclick=()=>{
     navbar.classList.toggle('active');
     menu.classList.toggle('move');
-    //menu.classList.remove('active');
     bell.classList.remove('active');
 }
 
@@ -40,7 +39,7 @@ var swiper = new Swiper(".trending-content", {
     },
   });
 
-// Скроллбар прочитаного
+  // Скроллбар прочитаного
 window.onscroll = function(){mufunction()};
 function mufunction(){
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
