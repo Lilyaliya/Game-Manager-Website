@@ -47,3 +47,11 @@ function mufunction(){
   var scrolled = (winScroll / height) * 100;
   document.getElementById('scroll-bar').style.width = scrolled + '%';
 }
+
+// добаввление новой игры в коллекцию
+// 1. Создали div и добавили к странице
+let div = document.createElement('div');
+div.classList.add('game-content');
+let gamesContainer = document.querySelector('section.games.container');
+console.log(gamesContainer);
+gamesContainer.appendChild(div);

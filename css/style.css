@@ -387,6 +387,32 @@ a, u {
 
   }
 
+  .form-submit-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .form-submit-btn input{
+    background: var(--main-color);
+    padding: 12px 20px;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    font-weight: 500rem;
+  }
+
+  .form-submit-btn input:hover{
+    background: var(--light-color);
+    transition: 0.3s all linear;
+  }
+/*Мои игры*/
+.game-content{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+  gap: 1.2rem;
+
+}
   .copyright{
     display: flex;
     justify-content: space-between;
@@ -498,3 +524,5 @@ a, u {
     width: 0%;
 
   }
+
+  /**/
