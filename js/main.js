@@ -70,7 +70,6 @@ function displayGameDetail(){
   // выбрали жанр игры
   let genre = document.querySelector('input[name="genre"]:checked').value;
   console.log(genre);
-  
   pathPreview = pathPreview.toString();
   pathTeaser = pathTeaser.toString();
   var t = pathTeaser.split('/')[5];
@@ -81,12 +80,13 @@ function displayGameDetail(){
   if (m){
     console.log("Id-шечка на обложку: " + m);
   }
-  // let doc  = document.createHTMLDocument(gName);
+   let doc  = document.createHTMLDocument(gName);
   // let gStr = genre === 'Action'? "Экшн": genre === 'RPG'? "Шутер": genre === 'Card'?"Карты": "Другое";
   let imgPath = genre === 'Экшн'? "action.jpg": genre === 'Шутер'? "rpg.jpg": genre === 'Карты'?"card.jpg": "other.jpg";
+  console.log(imgPath);
   // <img src="https://drive.google.com/uc?export=view&id=${pathPreview}" alt=""> 
   let html = `<div class="box">
-                <img src="img/${imgPath}" alt=""> 
+                <img src="https://drive.google.com/uc?export=view&id=${pathPreview}" alt=""> 
                 <div class="box-text">
                     <h2>${gName}</h2>
                     <h3>${genre}</h3>
@@ -95,12 +95,11 @@ function displayGameDetail(){
                             <i class='bx bxs-star' ></i>
                             <span>4.7</span>
                         </div>
-                        <a href="download.html" class="box-btn"><i class='bx bxs-message-alt-x' ></i></a>
+                        <a href="${gName.html}" class="box-btn"><i class='bx bxs-message-alt-x' ></i></a>
                     </div>
                 </div>
               </div>`;
-
-  div.insertAdjacentHTML('beforeend', html);
+  div.insertAdjacentHTML('afterbegin', html);
 }
 
 
