@@ -80,13 +80,13 @@ function displayGameDetail(){
   if (m){
     console.log("Id-шечка на обложку: " + m);
   }
-   let doc  = document.createHTMLDocument(gName);
+  // let doc  = document.createHTMLDocument(gName);
   // let gStr = genre === 'Action'? "Экшн": genre === 'RPG'? "Шутер": genre === 'Card'?"Карты": "Другое";
   let imgPath = genre === 'Экшн'? "action.jpg": genre === 'Шутер'? "rpg.jpg": genre === 'Карты'?"card.jpg": "other.jpg";
   console.log(imgPath);
   // <img src="https://drive.google.com/uc?export=view&id=${pathPreview}" alt=""> 
   let html = `<div class="box">
-                <img src="https://drive.google.com/uc?export=view&id=${pathPreview}" alt=""> 
+                <img src="img/${imgPath}" alt=""> 
                 <div class="box-text">
                     <h2>${gName}</h2>
                     <h3>${genre}</h3>
