@@ -59,6 +59,8 @@ gamesContainer.appendChild(div);
 let submitBtn = document.getElementById('btn');
 console.log(submitBtn);
 submitBtn.addEventListener('click', displayGameDetail);
+
+
 // 3. создадим функцию отображения единицы игры
 function displayGameDetail(){
   let gName = document.getElementById('gameName').value;
@@ -99,7 +101,7 @@ function displayGameDetail(){
                     </div>
                 </div>
               </div>`;
-  div.insertAdjacentHTML('afterbegin', html);
+  div.insertAdjacentHTML('beforeend', html);
 }
 
 
