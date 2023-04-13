@@ -87,6 +87,7 @@ function displayGameDetail(){
   let imgPath = genre === 'Экшн'? "action.jpg": genre === 'Шутер'? "rpg.jpg": genre === 'Карты'?"card.jpg": "other.jpg";
   console.log(imgPath);
   // <img src="https://drive.google.com/uc?export=view&id=${pathPreview}" alt=""> 
+  // <img src="img/${imgPath}" alt=""> 
   let html = `<div class="box">
                 <img src="img/${imgPath}" alt=""> 
                 <div class="box-text">
@@ -97,11 +98,13 @@ function displayGameDetail(){
                             <i class='bx bxs-star' ></i>
                             <span>4.7</span>
                         </div>
-                        <a href="${gName.html}" class="box-btn"><i class='bx bxs-message-alt-x' ></i></a>
+                        <a href="download.html" class="box-btn"><i class='bx bxs-message-alt-x' ></i></a>
                     </div>
                 </div>
               </div>`;
-  div.insertAdjacentHTML('beforeend', html);
+  div.insertAdjacentHTML('afterbegin', html);
+
+
 }
 
 
