@@ -411,14 +411,14 @@
                     <div class="genre-details-box">
                         <span class="genre-title">Жанр игры</span>
                         <div class="genre-category">
-                            <input type="radio" name="genre" id="Action" value="Экшн">
+                            <input type="checkbox" name="genre" id="Action" value="Экшн">
                             <label for="Action">Экшн</label>
-                            <input type="radio" name="genre" id="RPG" value="Шутер">
+                            <input type="checkbox" name="genre" id="RPG" value="Шутер">
                             <label for="RPG">Шутер</label>
-                            <input type="radio" name="genre" id="Card" value="Карты">
+                            <input type="checkbox" name="genre" id="Card" value="Карты">
                             <label for="Card">Карты</label>
-                            <input type="radio" name="genre" id="Other" value="Другое">
                             <label for="Other">Другое</label>
+                            <input type="text" id="other" name="other" placeholder="жанр"/>
                         </div>
                     </div>
                     <div class="form-submit-btn">
@@ -426,7 +426,17 @@
                     </div>
                 </form>
             </div>
-            
+
+
+            <div class="main">
+                
+                    <ul class="indicator">
+                        <li data-filter = "all"> <a href="#">All</a></li>
+                        <li data-filter = "all"> <a href="#">All</a></li>
+                        <li data-filter = "all"> <a href="#">All</a></li>
+                    </ul>
+                
+            </div>
 
             <!--Наполнение-->
             <div class="game-content">
@@ -491,9 +501,9 @@
                     </div>
                 </div>
             </div>
-            <div class="next-page">
+            <!-- <div class="next-page">
                 <a href="#">Следующая страница</a>
-            </div>
+            </div> -->
            
         </section>
 

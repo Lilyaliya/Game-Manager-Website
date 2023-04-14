@@ -6,6 +6,9 @@ menu.onclick=()=>{
     bell.classList.remove('active');
 }
 
+// Это глоб переменная для хранения json
+var json = null;
+
 //Уведомления
 let bell = document.querySelector('.notification');
 document.querySelector('#bell-icon').onclick = ()=>{
@@ -60,23 +63,29 @@ let submitBtn = document.getElementById('btn');
 console.log(submitBtn);
 submitBtn.addEventListener('click', displayGameDetail);
 
+// 10. добавим main и поставим туда все доступные теги
+let main = document.createElement('div');
+main.classList.add('main');
+let list = document.createElement('ul');
+list.classList.add('indicator');
+main.appendChild(list);
+gamesContainer.appendChild(main);
 
-// var names = function(arrayObjs){
-//   "use strict";
-//   var arr = arrayObjs.map(function(arrEl){
-//     return arrEl.name;
+// 11. глобальная переменная для хранения json
+ //var json = readJSON();
+ "use strict";
+ //var gen = fillUniqueGenres(json);
+// fillSectionSort(genres);
+
+// function fillSectionSort(genres){
+//   let html = <li data-filter = "all"> <a href="#">All</a></li>;
+//   list.insertAdjacentHTML('beforeend', html);
+//   genres.forEach(function (genre){
+//     html = `<li data-filter = "${genre}"> <a href="#">${genre}</a></li>`;
+//     div.insertAdjacentHTML('beforeend', html);
 //   });
-
-// };
-
-// $(document).ready(function(){
-//   $.getJSON("data.json", function(arrayObjs){
-//     names(arrayObjs);
-//   });
-// });
-
-
-
+  
+// }
 //window.onload = function(){insertGames()};
 
 // функция получения списка игр по жанрам
@@ -105,6 +114,21 @@ var fillGenreList = function (elements){
     console.log(games);
     return games;
 };
+
+var fillUniqueGenres = function (elements) {
+  var genres =[];
+  elements.forEach(function (list) {
+    list.genres.forEach(function (genre) {
+      if (genres.indexOf(genre) === -1){
+        genres.push(genre);
+      }
+      });
+    });
+    var arrGenres = genres.map(function (genre) { 
+      return {"genre": genre};
+     });
+     return arrGenres;
+  }
 
 // функция получения игр из json
 var fillGameList = function (elements){
@@ -139,7 +163,7 @@ var fillGameList = function (elements){
 
 // функция добавления новых игр
 var insertGames = function (elements){
-  "use strict";
+  //"use strict";
   // var arrGames = elements.map(function (item) {
 	// 	// просто возвращаем имя игры
 	// 	return item.name;
@@ -189,14 +213,13 @@ function displayGameDetail(){
                     </div>
                 </div>
               </div>`;
-  div.insertAdjacentHTML('afterbegin', html);
+  div.insertAdjacentHTML('beforeend', html);
 
 
 }
 
 var displayGameJson = function(elements){
   //"use strict";
-  // return {"game": game, "genres": genres};
   var games = fillGameList(elements);
   console.log(games);
   games.forEach(function (game){
@@ -217,29 +240,24 @@ var displayGameJson = function(elements){
           </div>
       </div>
       </div>`;
-    div.insertAdjacentHTML('afterbegin', html);
+    div.insertAdjacentHTML('beforeend', html);
   });
   
 }
 
-// var insertGames = function(elements){
-// 
-//   displayGameJson(elements);
-// // получаем json файл и кладем его в elements
-
-// });
-// }
+function readJSON(){
+  $(document).ready(function () {
+    $.getJSON("js/data.json", function (elements) {
+        
+          return elements;
+          });
+    });
+};
 //"use strict";
 $(document).ready(function () {
 	$.getJSON("js/data.json", function (elements) {
+        json = elements;
       // вызов функции insertGames с аргументом в виде объекта elements 
         insertGames(elements);
         });
-  //   .success( function (elements) {
-	// // вызов функции insertGames с аргументом в виде объекта elements 
-	// 	insertGames(elements);
-  //   })
-  //   .error(function(error){
-  //     console.log(error);
-  //   });
   });
