@@ -2,7 +2,7 @@
     {
         "name": "Blade Runner",
         "image": "002.jpg",
-        "genres": ["Шутер", "Квест", "Приключения"]
+        "genres": ["Квест", "Приключения"]
     },
     {
         "name": "Crack it now",
