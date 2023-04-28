@@ -10,6 +10,8 @@ menu.onclick=()=>{
 var json = null;
 // вывод содержимого по умолчанию
 var def = false;
+// результат парсинга
+var games = [];
 //Уведомления
 let bell = document.querySelector('.notification');
 document.querySelector('#bell-icon').onclick = ()=>{
@@ -66,16 +68,8 @@ submitBtn.addEventListener('click', displayGameDetail);
 // 10. добавим li и поставим туда все доступные теги
 
 let main = document.querySelector('.main');
-let list = document.querySelector('.indicator');
-let li = document.querySelector('li[data-filter="Все"]');
-
-var fillSectionSort = function (genres){
-  
-  genres.forEach(function (genre){
-    html = `<li data-filter = "${genre.genre}" id="li"> <a href="#games">${genre.genre}</a></li>`;
-    list.insertAdjacentHTML('beforeend', html);
-  });
-};
+//let list = document.querySelector('.indicator');
+//let li = document.querySelector('li[data-filter="Все"]');
 
 
 // функция получения списка игр по жанрам
@@ -109,23 +103,6 @@ var fillGenreList = function (elements){
 };
 
 
-
-  var fillUniqueGenres = function (elements){
-    var genres =[];
-    elements.forEach(function (list) {
-      list.genres.forEach(function (genre) {
-        if (genres.indexOf(genre) === -1){
-          genres.push(genre);
-        }
-        });
-      });
-      var arrGenres = genres.map(function (genre) { 
-        return {"genre": genre};
-      });
-    return arrGenres;
-  }
-
-
 // функция получения игр из json
 var fillGameList = function (elements){
   // filled names
@@ -133,15 +110,15 @@ var fillGameList = function (elements){
   // var images = [];
   var temp;
   elements.forEach(function (element) {
-      if (names.indexOf(element.name) === -1){
-        names.push(element.name);
+      if (names.indexOf(element.game) === -1){
+        names.push(element.game);
       }
     });
     var gameList = names.map(function (game) {
         var genres = [];
         var image = [];
         elements.forEach(function (element) {
-          if (game === element.name){
+          if (game === element.game){
             image.push(element.image);
             genres.push(element.genres);
           }
@@ -155,13 +132,25 @@ var fillGameList = function (elements){
 
 // функция добавления новых игр
 var insertGames = function (elements){
+  games = elements.map(function (game){
+    var name = game.name;
+    var genres = [];
+    var image = game.image;
+    game.genres.forEach(function (Genres){
+      genres.push(Genres);
+    });
+    return {"game": name, "image": image, "genres": genres};
+  });
+  console.log(games);
   //"use strict";
   if (def)
-     displayGenreJson(elements);
+     displayGenreJson(games);
  else
-     displayGameJson(elements);
+     displayGameJson(games);
   
 }
+
+
 
 // 3. создадим функцию отображения единицы игры
 function displayGameDetail(){
@@ -287,42 +276,6 @@ $(document).ready(function () {
 let box = document.querySelector('.game-content');
 let boxes = Array.from(box.children);
 
- function Filter(){
-  let indicator = document.querySelector('.indicator').children;
-   this.run = function () {
-    let html = `<li data-filter = "Приключения" id="li"> <a href="#games">${indicator.length}</a></li>`;
-    list.insertAdjacentHTML('beforeend', html);
-    for (let i = 0; i < indicator.length;i++){
-      indicator[i].onclick = function() {
-          for (let x = 0; x < indicator.length; x++){
-            indicator[x].classList.remove('active');
-          }
-          
-        
-          this.classList.add('active');
-          const displayItems = this.getAttribute('data-filter');
-          
-          for (let z = 0; z < boxes.length; z++){
-              boxes[z].style.transform = 'scale(0)';
-              setTimeout(()=>{
-                  boxes[z].style.display = 'none';
-              }, 500);
-              var temp = boxes[z].querySelector('h3').textContent;
-              let html = `<li data-filter = "Приключения" id="li"> <a href="#games">${temp}</a></li>`;
-              list.insertAdjacentHTML('beforeend', html);
-              if (temp.includes(displayItems) ){
-                boxes[z].style.transform = 'scale(1)';
-                setTimeout(()=>{
-                    boxes[z].style.display = 'block';
-                }, 500);
-              }
-          }
-        };
-      }
-
-     }
-    
- }
 
  function SortProduct() {
   var select = document.getElementById('select');
@@ -341,7 +294,7 @@ let boxes = Array.from(box.children);
       def = false;
       $(".game-content").empty();
       $(".filter-genre").empty();
-      displayGameJson(json);
+      displayGameJson(games);
       
       
     }
@@ -352,7 +305,7 @@ let boxes = Array.from(box.children);
 
       $(".game-content").empty();
       $(".filter-genre").empty();
-      displayGenreJson(json);
+      displayGenreJson(games);
       
 
     }
@@ -360,6 +313,6 @@ let boxes = Array.from(box.children);
   }
   
 }
-new Filter().run();
 new SortProduct().run();
 })();
+
