@@ -637,7 +637,7 @@ a, u {
     text-decoration: none;
     display: inline-block;
     width: 40px;
-    background: var(--main-color);
+    background:darkseagreen;
     font-size: 2rem;
     font-weight: bold;
     color: var(--text-color);
@@ -647,3 +647,26 @@ a, u {
     border-radius: 0.5rem;
   }
 
+  /*автоматически добавляемое поле ввода жанра*/
+  .flex{
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .delete{
+    text-decoration: none;
+    display: inline-block;
+    background-color: brown;
+    color: var(--text-color);
+    font-size:  1.5rem;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    cursor: pointer;
+
+  }

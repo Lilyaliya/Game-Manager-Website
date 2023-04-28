@@ -10,6 +10,7 @@ menu.onclick=()=>{
 var json = null;
 // вывод содержимого по умолчанию
 var def = false;
+var needReload = false; // state of reload
 // результат парсинга
 var games = [];
 //Уведомления
@@ -63,8 +64,8 @@ gamesContainer.appendChild(div);
 // 2. добавили прослушку на кнопку
 let submitBtn = document.getElementById('btn');
 console.log(submitBtn);
-submitBtn.addEventListener('click', displayGameDetail);
-
+submitBtn.addEventListener('click', addNewGame);
+document.getElementById('1').onchange = SortProduct;
 // 10. добавим li и поставим туда все доступные теги
 
 let main = document.querySelector('.main');
@@ -91,7 +92,7 @@ var fillGenreList = function (elements){
       var images = [];
       elements.forEach(function (list) {
         if (list.genres.indexOf(genre) !== -1){
-          gamesOfGenre.push(list.name);
+          gamesOfGenre.push(list.game);
           images.push(list.image);
         }
         });
@@ -150,7 +151,53 @@ var insertGames = function (elements){
   
 }
 
+function addInput(){
+  const genre = document.createElement('input');
+  genre.type = "text";
+  genre.name = "genrick";
+  genre.placeholder = "введите свой жанр";
+  const btn = document.createElement('a');
+  btn.className = "delete";
+  btn.innerHTML = "&times";
 
+  const flex = document.createElement('div');
+  flex.className = "flex";
+
+  input.appendChild(flex);
+  flex.appendChild(genre);
+  flex.appendChild(btn);
+
+}
+
+// Добавим функционал добавления нового жанра к игре
+const addBtn = document.querySelector(".add");
+const input = document.querySelector('.inp-group');
+addBtn.addEventListener("click", addInput);
+
+
+function addNewGame(){
+  let gName = document.getElementById('gameName').value;
+  let image = document.getElementById('photoPreview').value;
+  var genres = [];
+  var temp = document.querySelectorAll('.flex');
+  temp.forEach(function (el){
+    var text = el.querySelector('input[name="genrick"]').value;
+    console.log(text);
+    if (genres.indexOf(text) === -1){
+      genres.push(text);
+    }
+  })
+
+  console.log(genres);
+  var element = {"game": gName, "image": 'other.jpg', "genres": genres};
+  games.push(element);
+  var sel = document.getElementById('select');
+  var option = sel.querySelector('option');
+  console.log(option.getAttribute('name'));
+  option.setAttribute('name', needReload);
+  console.log(option.getAttribute('name'));
+  needReload = !needReload;
+}
 
 // 3. создадим функцию отображения единицы игры
 function displayGameDetail(){
@@ -271,27 +318,37 @@ $(document).ready(function () {
 
 
 
-(function() {
-
-let box = document.querySelector('.game-content');
-let boxes = Array.from(box.children);
+// (function() {
 
 
  function SortProduct() {
   var select = document.getElementById('select');
+  var option = select.querySelector('option');
   
   this.run = ()=>{
     addevent();
   }
   function addevent(){
     select.onchange = sortingValue;
+    // if (needReload){
+    //   console.log("I'm here in  sorting");
+    //   sortingValue;
+    // }
+     
+    //select.onchange = needReload;
   }
+  // function reload(){
+  //   console.log("I'm from reload");
+  //   sortingValue();
+  // }
   function sortingValue(){
   
     if (this.value === 'Default') {
       
       
       def = false;
+      if (needReload)
+        needReload = false;
       $(".game-content").empty();
       $(".filter-genre").empty();
       displayGameJson(games);
@@ -302,7 +359,8 @@ let boxes = Array.from(box.children);
       
       
       def = true;
-
+      if (needReload)
+        needReload = false;
       $(".game-content").empty();
       $(".filter-genre").empty();
       displayGenreJson(games);
@@ -314,5 +372,5 @@ let boxes = Array.from(box.children);
   
 }
 new SortProduct().run();
-})();
+// })();
 
