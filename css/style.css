@@ -614,4 +614,36 @@ a, u {
 
   }
 
-  /**/
+  /*список с играми*/
+  .genre-container{
+    max-width: 350px;
+    background:var(--light-color);
+    width: 350px;
+    padding: 20px;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--main-color);
+  }
+
+  .add{
+    text-decoration: none;
+    display: inline-block;
+    width: 40px;
+    background: var(--main-color);
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+  }
+
