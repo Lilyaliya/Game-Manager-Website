@@ -16,12 +16,12 @@
     },
     {
         "name": "Dress & Look",
-        "image": "action.jpg",
+        "image": "rpg.jpg",
         "genres": ["Детские", "Одевалки", "Симулятор"]
     },
     {
         "name": "Adventurer Blake",
-        "image": "001.jpeg",
+        "image": "008.jpeg",
         "genres": ["Приключения"]
     }
 
