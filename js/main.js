@@ -65,12 +65,17 @@ gamesContainer.appendChild(div);
 let submitBtn = document.getElementById('btn');
 console.log(submitBtn);
 submitBtn.addEventListener('click', addNewGame);
+
+var select = document.getElementById('select');
+var even = new Event('change');
+var option = select.querySelector('option');
+// Dispatch it.
+// option.dispatchEvent(even);
+
 document.getElementById('1').onchange = SortProduct;
 // 10. добавим li и поставим туда все доступные теги
 
 let main = document.querySelector('.main');
-//let list = document.querySelector('.indicator');
-//let li = document.querySelector('li[data-filter="Все"]');
 
 
 // функция получения списка игр по жанрам
@@ -186,8 +191,7 @@ function addNewGame(){
     if (genres.indexOf(text) === -1){
       genres.push(text);
     }
-  })
-
+  });
   console.log(genres);
   var element = {"game": gName, "image": 'other.jpg', "genres": genres};
   games.push(element);
@@ -197,51 +201,10 @@ function addNewGame(){
   option.setAttribute('name', needReload);
   console.log(option.getAttribute('name'));
   needReload = !needReload;
+  select.dispatchEvent(even);
 }
 
-// 3. создадим функцию отображения единицы игры
-function displayGameDetail(){
-  let gName = document.getElementById('gameName').value;
-  console.log(gName);
-  var pathPreview = document.getElementById('photoPreview').value;
-  console.log(pathPreview);
-  var pathTeaser = document.getElementById('teaser').value;
-  console.log(pathTeaser);
-  // выбрали жанр игры
-  let genre = document.querySelector('input[name="genre"]:checked').value;
-  console.log(genre);
-  pathPreview = pathPreview.toString();
-  pathTeaser = pathTeaser.toString();
-  var t = pathTeaser.split('/')[5];
-  var m = pathPreview.split('/')[5];
-  if (t){
-    console.log("Id-шечка на Тихона: " + t);
-  }
-  if (m){
-    console.log("Id-шечка на обложку: " + m);
-  }
- 
-  let imgPath = genre === 'Экшн'? "action.jpg": genre === 'Шутер'? "rpg.jpg": genre === 'Карты'?"card.jpg": "other.jpg";
-  console.log(imgPath);
 
-  let html = `<div class="box">
-                <img src="img/${imgPath}" alt=""> 
-                <div class="box-text">
-                    <h2>${gName}</h2>
-                    <h3>${genre}</h3>
-                    <div class="rating-download">
-                        <div class="rating">
-                            <i class='bx bxs-star' ></i>
-                            <span>4.7</span>
-                        </div>
-                        <a href="download.html" class="box-btn"><i class='bx bxs-message-alt-x' ></i></a>
-                    </div>
-                </div>
-              </div>`;
-  div.insertAdjacentHTML('beforeend', html);
-
-
-}
 
 var displayGameJson = function(elements){
   //"use strict";
@@ -318,7 +281,7 @@ $(document).ready(function () {
 
 
 
-// (function() {
+
 
 
  function SortProduct() {
@@ -328,19 +291,14 @@ $(document).ready(function () {
   this.run = ()=>{
     addevent();
   }
+
   function addevent(){
     select.onchange = sortingValue;
-    // if (needReload){
-    //   console.log("I'm here in  sorting");
-    //   sortingValue;
-    // }
+
      
-    //select.onchange = needReload;
+
   }
-  // function reload(){
-  //   console.log("I'm from reload");
-  //   sortingValue();
-  // }
+
   function sortingValue(){
   
     if (this.value === 'Default') {
@@ -372,5 +330,5 @@ $(document).ready(function () {
   
 }
 new SortProduct().run();
-// })();
+
 
