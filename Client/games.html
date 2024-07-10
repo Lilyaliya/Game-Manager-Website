@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Game Manager</title>
+        <link rel = "shortcut icon" href="img/fav.png" type="image/x-icon">
+        <!--Ссылка на CSS-->
+        <link rel="stylesheet" href="../css/style.css">
+        <!--Добавляем шрифт с boxicons-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!--Ссылка на swiper файл (слайдер)-->
+        <link rel="stylesheet" href="css/swiper-bundle.min.css">
+        <link href="https://github.com/sponsors/twbs/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script type="text/javascript">
+
+            function DisplayImage(result) {
+                if (result.files && result.files[0]) {
+                    var fileReader = new FileReader();
+                    fileReader.onload = function (e) {
+                        $("#img").attr('src', e.target.result);
+                    }
+                    fileReader.readAsDataURL(result.files[0]);
+                }
+            };
+
+        </script>
+    </head>
+    <body>
+        <!--Скролл прочитанного-->
+        <div class="progress">
+            <div class="progress-bar" id="scroll-bar">
+                
+            </div>
+        </div>
+        <!--Заголовок-->
+        <header>
+            <!--Nav Bar-->
+            <div class="nav-icons">
+                <!--Логотип-->
+                <a href="index.html" class="logo">Game<span>Manager</span></a>
+                <div class="nav-icons">
+                    <i class='bx bx-bell bx-tada' id="bell-icon"><span></span></i>
+                    <i class='bx bxs-download' ></i>
+                    <div class="menu-icon" >
+                        <!-- <div class="a">☰</div> -->
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu">
+                <img src="img/menu.png" alt="">
+                <div class="navbar">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="#trending">Популярное</a></li>
+                    <li><a href="#new">Новинки</a></li>
+                    <li><a href="#games">Мои игры</a></li>
+                    <li><a href="#autho" id="auth">Авторизация</a></li>
+                    <li><a href="#" id="admin">Панель управления</a></li>
+                    <li><a href="#newGame">Добавить игру</a></li>
+                    <li><a href="#contact">Для связи</a></li>
+                </div>
+            </div>
+            <!--Уведомления-->
+            <div class="notification">
+                <div class="notification-box">
+                    <i class='bx bxs-check-circle' ></i>
+                    <p>Поздравляем, ваша игра успешно загружена.</p>
+                </div>
+                <div class="notification-box box-color">
+                    <i class='bx bxs-x-circle' ></i>
+                    <p>Изменения не были внесены.</p>
+                </div>
+            </div>
+        </header>
+        <!--Домашняя страница начало-->
+        <section class="home container" id="home">
+            <img src="img/home.png" alt="">
+            <div class="home-text">
+                <h1>ГОРОД <br> БУДУЩЕГО</h1>
+                <a href="#" class="btn">В доступе</a>
+            </div>
+        </section>
+        <!--Домашняя страница конец-->
+        <!--Популярное начало-->
+        <section class="trending container" id="trending">
+            <div class="heading">
+                <i class='bx bxs-flame' ></i>
+                <h2>Популярные игры</h2>
+
+            </div>
+            <!--Контент, наполнение-->
+            <div class="trending-content swiper">
+                <div class="swiper-wrapper">
+                    <!--Слайд 1-->
+                    <div class="swiper-slide">
+                        <div class="box">
+                            <img src="img/trending1.webp" alt="">
+                            <div class="box-text">
+                                <h2>Cyberpunk 2077</h2>
+                                <h3>Экшн</h3>
+                                <div class="rating-download">
+                                    <div class="rating">
+                                        <i class='bx bxs-star' ></i>
+                                        <span>4.7</span>
+                                    </div>
+                                    <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Слайд 2-->
+                    <div class="swiper-slide">
+                        <div class="box">
+                            <img src="img/trending2.jpg" alt="">
+                            <div class="box-text">
+                                <h2>Battlefield 2042</h2>
+                                <h3>Экшн</h3>
+                                <div class="rating-download">
+                                    <div class="rating">
+                                        <i class='bx bxs-star' ></i>
+                                        <span>4.7</span>
+                                    </div>
+                                    <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                <!--Слайд 3-->
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="img/trending3.jpg" alt="">
+                        <div class="box-text">
+                            <h2>Assassin's Creed</h2>
+                            <h3>Экшн</h3>
+                            <div class="rating-download">
+                                <div class="rating">
+                                    <i class='bx bxs-star' ></i>
+                                    <span>4.7</span>
+                                </div>
+                                <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Слайд 4-->
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="img/trending4.jpg" alt="">
+                        <div class="box-text">
+                            <h2>Ghost of Tsushima</h2>
+                            <h3>Экшн</h3>
+                            <div class="rating-download">
+                                <div class="rating">
+                                    <i class='bx bxs-star' ></i>
+                                    <span>4.7</span>
+                                </div>
+                                <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Слайд 5-->
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="img/trending5.png" alt="">
+                        <div class="box-text">
+                            <h2>GTA 5</h2>
+                            <h3>Экшн</h3>
+                            <div class="rating-download">
+                                <div class="rating">
+                                    <i class='bx bxs-star' ></i>
+                                    <span>4.7</span>
+                                </div>
+                                <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Слайд 6-->
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="img/trending6.jpg" alt="">
+                        <div class="box-text">
+                            <h2>Dying Light 2</h2>
+                            <h3>Экшн</h3>
+                            <div class="rating-download">
+                                <div class="rating">
+                                    <i class='bx bxs-star' ></i>
+                                    <span>4.7</span>
+                                </div>
+                                <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Слайд 7-->
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="img/trending7.png" alt="">
+                        <div class="box-text">
+                            <h2>Halo Infinite</h2>
+                            <h3>Экшн</h3>
+                            <div class="rating-download">
+                                <div class="rating">
+                                    <i class='bx bxs-star' ></i>
+                                    <span>4.7</span>
+                                </div>
+                                <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Слайд 8-->
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="img/trending8.png" alt="">
+                        <div class="box-text">
+                            <h2>Resident Evil Village</h2>
+                            <h3>Экшн</h3>
+                            <div class="rating-download">
+                                <div class="rating">
+                                    <i class='bx bxs-star' ></i>
+                                    <span>4.7</span>
+                                </div>
+                                <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Популярное конец-->
+        <!--Секция с новинками начало-->
+        <section class="new container" id="new">
+            <div class="heading">
+                <i class='bx bx-game'></i>
+                <h2>Новинки</h2>
+            </div>
+            <!--Наполнение-->
+            <div class="new-content">
+                <!--блок 1-->
+                <div class="box">
+                    <img src="img/new1.jpg" alt="">
+                    <div class="box-text">
+                        <h2>Subway Surfers</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="download.html" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            <div class="box-btn">
+                                <i class='bx bxs-message-square-x' ></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--блок 2-->
+                <div class="box">
+                    <img src="img/new2.jpg" alt="">
+                    <div class="box-text">
+                        <h2>Call of Duty: Mobile</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--блок 3-->
+                <div class="box">
+                    <img src="img/new3.jpg" alt="">
+                    <div class="box-text">
+                        <h2>Free Guy</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--блок 4-->
+                <div class="box">
+                    <img src="img/new4.jpg" alt="">
+                    <div class="box-text">
+                        <h2>Clash Royale</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--блок 5-->
+                <div class="box">
+                    <img src="img/new5.png" alt="">
+                    <div class="box-text">
+                        <h2>Minecraft</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--блок 6-->
+                <div class="box">
+                    <img src="img/new6.png" alt="">
+                    <div class="box-text">
+                        <h2>PUBG</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--блок 7-->
+                <div class="box">
+                    <img src="img/new7.png" alt="">
+                    <div class="box-text">
+                        <h2>Fortnite</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--блок 8-->
+                <div class="box">
+                    <img src="img/new8.jpg" alt="">
+                    <div class="box-text">
+                        <h2>Marvel of Champions</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="next-page">
+                <a href="#">Следующая страница</a>
+            </div>
+        </section>
+        <!--Секция с новинками конец-->
+        <section class="user container" id="autho">
+            <div class="heading">
+                <i class='bx bx-user-circle' ></i>
+                <h2>Авторизация</h2>
+            </div>
+            <div>
+                <main>
+                    <div class="authorization">
+                        <a href="../../index.html">Выход</a>
+                    </div>
+                </main>
+                
+            </div>
+            
+        </section>
+        
+        <!--Секция с моими играми начало-->
+        <section class="games container" id="games">
+            <div class="heading">
+                <i class='bx bxs-coin-stack'></i>
+                <h2>Мои игры</h2>
+            </div>
+             <!--Форма добавления новой игры-->
+             <div class="register" id="newGame">
+                <h1 class="form-title">Новая игра</h1>
+                <form action="#">
+                    <div class="main-game-info">
+                        <div class="game-input-box">
+                            <label for="gameName">Название игры</label>
+                            <input type="text"
+                                        id="gameName"
+                                        name="gameName"
+                                        placeholder="Введите название игры"/>
+                        </div>
+
+                        <div class="game-input-box">
+                            <label for="download">Ссылка на скачивание</label>
+                            <input type="text"
+                                        id="download"
+                                        name="download"
+                                        placeholder="Вставьте ссылку на скачивание"/>
+                        </div>
+                        
+                        
+                        <div class="game-input-box">
+                            <label for="image">Обложка игры</label>
+                            <input type="file" id="image" name="image" accept="image/png, image/jpeg, image/jpg" onchange="DisplayImage(this)"/>
+                            <img id="img" height="300"  style="border: solid #fa3340; width: 92%; border-radius: 0.5rem;" />
+                        </div>
+                        
+
+                        <div class="game-input-box">
+                            <label for="info">Информация об игре</label>
+                            <!-- <input type="text"
+                                        id="info"
+                                        name="info"
+                                        placeholder="Опишите вашу игру"/> -->
+                            <textarea
+                                placeholder="Опишите вашу игру"
+                                required>
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="genre-container" id="genres">
+                        <div class="wrap">
+                            <h3>Перечисли жанры для игры:</h3>
+                            <a href="#newGame" class="add">&plus;</a>
+                        </div>
+                        <div class="inp-group">
+
+                        </div>
+                    </div>
+                    
+                        <div class="form-submit-btn" >
+                                <input type="button" value="Добавить к играм" id="btn" class="button-new-game">
+                        </div>
+                </form>
+            </div>
+
+
+            <div class="main">
+                
+                    <br>
+                    <div class="dropdown">
+                        <span>Поиск по жанру </span>
+                        <div class="select">
+                            <span class="selected">Все жанры</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="menu-genres">
+                            <li class="active">Все жанры</li>
+    
+                        </ul>
+                    </div>
+
+                    <div class="dropdown">
+                    
+                        <div class="search-box">
+                            <i class="bx bx-search"></i>
+                            <input type="text" placeholder="Найти игру">
+                        </div>
+                    </div>
+                    
+            
+            </div>
+            <br>
+            <div class="game-content">
+                <!-- <main>
+                    <div class="wrapper">
+                        
+                        Карточки игр
+                        <div class="games"></div>
+                    </div>
+                </main> -->
+            </div>
+            <div class="empty">
+
+            </div>
+            <br>
+        </section>
+
+
+        <div style="margin-top: 30px">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#divAddRoom" data-backdrop="static" data-keyboard="false"> Зарегистрировать комнату</button>
+        </div>
+        <!-- Модальное окно изменения элемента игры -->
+        <div id="divAddRoom" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content" style="width: 600px">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Игра</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formRoom">
+                            <div class="container" style="width: 600px">
+                                <!-- <div class="form-group col-md-6">
+                                    
+                                </div> -->
+                                <div class="game-input-box">
+                                    <label for="gameName">Название игры</label>
+                                    <input type="text"
+                                                id="gameName"
+                                                name="gameName"
+                                                placeholder="Введите название игры"/>
+                                </div>
+        
+                                <div class="game-input-box">
+                                    <label for="download">Ссылка на скачивание</label>
+                                    <input type="text"
+                                                id="download"
+                                                name="download"
+                                                placeholder="Вставьте ссылку на скачивание"/>
+                                </div>
+                                
+                                
+                                <div class="game-input-box">
+                                    <label for="image">Обложка игры</label>
+                                    <input type="file" id="image" name="image" accept="image/png, image/jpeg, image/jpg" onchange="DisplayImage(this)"/>
+                                    <img id="img" height="300"  style="border: solid #fa3340; width: 92%; border-radius: 0.5rem;" />
+                                </div>
+                                
+        
+                                <div class="game-input-box">
+                                    <label for="info">Информация об игре</label>
+                                    <!-- <input type="text"
+                                                id="info"
+                                                name="info"
+                                                placeholder="Опишите вашу игру"/> -->
+                                    <textarea
+                                        placeholder="Опишите вашу игру"
+                                        required>
+                                    </textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnSave" type="button" class="btn btn-success">Сохранить</button>&nbsp;
+                        <button type="button" data-dismiss="modal" class="btn btn-danger">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Копирайт-->
+        <div class="copyright container">
+            <a href="#" class="logo">GAME<span>MANAGER</span></a>
+            <p>&#169; Lyn's_Soft All Right Reserved</p>
+        </div>
+
+        <!--Ссылка на Swiper (слайдер для просмотра популярных игр)-->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <!-- Ссылка на jQuery -->
+        <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
+
+        <script src="https://opencollective.com/popperjs/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+        <script src="https://github.com/sponsors/twbs/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+        <!--Поключение скриптов-->
+        <script  src="js/main.js"></script>
+        <!-- <script  src="js/dropdowns.js"></script> -->
+        <!-- <script type="module" src="js/search.js"></script> -->
+        <script type="module" src="js/add_new_game.js"></script>
+        <script type="module" src="js/auth.js"></script>
+        <script type="module" src="js/setupAuth.js"></script>
+        <script type="module" src="js/createCard.js"></script>
+        <script type="module" src="js/filter.js"></script>
+        <script type="module" src="js/sort_genres.js"></script>
+        <!-- <script type="module" src="js/display_image.js"></script> -->
+    </body>
+</html>

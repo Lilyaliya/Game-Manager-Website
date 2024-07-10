@@ -1,0 +1,28 @@
+[
+    {
+        "game": "Blade Runner",
+        "image": "002.jpg",
+        "genres": ["Квест", "Приключения"]
+    },
+    {
+        "game": "Crack it now",
+        "image": "other.jpg",
+        "genres": ["Квест", "Платформер"]
+    },
+    {
+        "game": "Speed",
+        "image": "003.jpg",
+        "genres": ["Гонки", "Спортивные", "Симулятор"]
+    },
+    {
+        "game": "Dress & Look",
+        "image": "rpg.jpg",
+        "genres": ["Детские", "Одевалки", "Симулятор"]
+    },
+    {
+        "game": "Adventurer Blake",
+        "image": "008.jpeg",
+        "genres": ["Приключения"]
+    }
+
+]

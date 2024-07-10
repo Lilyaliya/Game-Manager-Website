@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Game Manager</title>
+        <link rel = "shortcut icon" href="img/fav.png" type="image/x-icon">
+        <!--Ссылка на CSS-->
+        <link rel="stylesheet" href="css/style.css">
+        <!--Добавляем шрифт с boxicons-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!--Ссылка на swiper файл (слайдер)-->
+        <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    </head>
+    <body>
+        <!--Скролл прочитанного-->
+        <div class="progress">
+            <div class="progress-bar" id="scroll-bar">
+                
+            </div>
+        </div>
+        <!--Заголовок-->
+        <header>
+            <!--Nav Bar-->
+            <div class="nav-icons">
+                <!--Логотип-->
+                <a href="index.html" class="logo">Game<span>Manager</span></a>
+                <div class="nav-icons">
+                    <i class='bx bx-bell bx-tada' id="bell-icon"><span></span></i>
+                    <i class='bx bxs-download' ></i>
+                    <div class="menu-icon" >
+                        <!-- <div class="a">☰</div> -->
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu">
+                <img src="img/menu.png" alt="">
+                <div class="navbar">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="#trending">Популярное</a></li>
+                    <li><a href="#new">Новинки</a></li>
+                    <li><a href="#autho" id="auth">Авторизация</a></li>
+                    <li><a href="#" id="admin"></a></li>
+                    <li><a href="#users" id="user">Пользователи</a></li>
+                    <li><a href="#content" id="content">Контент сайта</a></li>
+                    <li><a href="#contact">Для связи</a></li>
+                </div>
+            </div>
+            <!--Уведомления-->
+            <div class="notification">
+                <div class="notification-box">
+                    <i class='bx bxs-check-circle' ></i>
+                    <p>Поздравляем, ваша игра успешно загружена.</p>
+                </div>
+                <div class="notification-box box-color">
+                    <i class='bx bxs-x-circle' ></i>
+                    <p>Изменения не были внесены.</p>
+                </div>
+            </div>
+        </header>
+        <!--Домашняя страница начало-->
+        <section class="home container" id="home">
+            <img src="img/home.png" alt="">
+            <div class="home-text">
+                <h1>ГОРОД <br> БУДУЩЕГО</h1>
+                <a href="#" class="btn">В доступе</a>
+            </div>
+        </section>
+        <!--Домашняя страница конец-->
+        <!--Популярное начало-->
+        <section class="trending container" id="trending">
+            <div class="heading">
+                <i class='bx bxs-flame' ></i>
+                <h2>Популярные игры</h2>
+
+            </div>
+            <!--Контент, наполнение-->
+            <div class="trending-content swiper">
+                <div class="swiper-wrapper">
+                    <!--Слайд 1-->
+                    <div class="swiper-slide">
+                        <div class="box">
+                            <img src="img/trending1.webp" alt="">
+                            <div class="box-text">
+                                <h2>Cyberpunk 2077</h2>
+                                <h3>Экшн</h3>
+                                <div class="rating-download">
+                                    <div class="rating">
+                                        <i class='bx bxs-star' ></i>
+                                        <span>4.7</span>
+                                    </div>
+                                    <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Слайд 2-->
+                    <div class="swiper-slide">
+                        <div class="box">
+                            <img src="img/trending2.jpg" alt="">
+                            <div class="box-text">
+                                <h2>Battlefield 2042</h2>
+                                <h3>Экшн</h3>
+                                <div class="rating-download">
+                                    <div class="rating">
+                                        <i class='bx bxs-star' ></i>
+                                        <span>4.7</span>
+                                    </div>
+                                    <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                <!--Слайд 3-->
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="img/trending3.jpg" alt="">
+                        <div class="box-text">
+                            <h2>Assassin's Creed</h2>
+                            <h3>Экшн</h3>
+                            <div class="rating-download">
+                                <div class="rating">
+                                    <i class='bx bxs-star' ></i>
+                                    <span>4.7</span>
+                                </div>
+                                <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Слайд 4-->
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="img/trending4.jpg" alt="">
+                        <div class="box-text">
+                            <h2>Ghost of Tsushima</h2>
+                            <h3>Экшн</h3>
+                            <div class="rating-download">
+                                <div class="rating">
+                                    <i class='bx bxs-star' ></i>
+                                    <span>4.7</span>
+                                </div>
+                                <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Слайд 5-->
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="img/trending5.png" alt="">
+                        <div class="box-text">
+                            <h2>GTA 5</h2>
+                            <h3>Экшн</h3>
+                            <div class="rating-download">
+                                <div class="rating">
+                                    <i class='bx bxs-star' ></i>
+                                    <span>4.7</span>
+                                </div>
+                                <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Слайд 6-->
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="img/trending6.jpg" alt="">
+                        <div class="box-text">
+                            <h2>Dying Light 2</h2>
+                            <h3>Экшн</h3>
+                            <div class="rating-download">
+                                <div class="rating">
+                                    <i class='bx bxs-star' ></i>
+                                    <span>4.7</span>
+                                </div>
+                                <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Слайд 7-->
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="img/trending7.png" alt="">
+                        <div class="box-text">
+                            <h2>Halo Infinite</h2>
+                            <h3>Экшн</h3>
+                            <div class="rating-download">
+                                <div class="rating">
+                                    <i class='bx bxs-star' ></i>
+                                    <span>4.7</span>
+                                </div>
+                                <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Слайд 8-->
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="img/trending8.png" alt="">
+                        <div class="box-text">
+                            <h2>Resident Evil Village</h2>
+                            <h3>Экшн</h3>
+                            <div class="rating-download">
+                                <div class="rating">
+                                    <i class='bx bxs-star' ></i>
+                                    <span>4.7</span>
+                                </div>
+                                <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Популярное конец-->
+        <!--Секция с новинками начало-->
+        <section class="new container" id="new">
+            <div class="heading">
+                <i class='bx bx-game'></i>
+                <h2>Новинки</h2>
+            </div>
+            <!--Наполнение-->
+            <div class="new-content">
+                <!--блок 1-->
+                <div class="box">
+                    <img src="img/new1.jpg" alt="">
+                    <div class="box-text">
+                        <h2>Subway Surfers</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="download.html" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--блок 2-->
+                <div class="box">
+                    <img src="img/new2.jpg" alt="">
+                    <div class="box-text">
+                        <h2>Call of Duty: Mobile</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--блок 3-->
+                <div class="box">
+                    <img src="img/new3.jpg" alt="">
+                    <div class="box-text">
+                        <h2>Free Guy</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--блок 4-->
+                <div class="box">
+                    <img src="img/new4.jpg" alt="">
+                    <div class="box-text">
+                        <h2>Clash Royale</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--блок 5-->
+                <div class="box">
+                    <img src="img/new5.png" alt="">
+                    <div class="box-text">
+                        <h2>Minecraft</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--блок 6-->
+                <div class="box">
+                    <img src="img/new6.png" alt="">
+                    <div class="box-text">
+                        <h2>PUBG</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--блок 7-->
+                <div class="box">
+                    <img src="img/new7.png" alt="">
+                    <div class="box-text">
+                        <h2>Fortnite</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--блок 8-->
+                <div class="box">
+                    <img src="img/new8.jpg" alt="">
+                    <div class="box-text">
+                        <h2>Marvel of Champions</h2>
+                        <h3>Экшн</h3>
+                        <div class="rating-download">
+                            <div class="rating">
+                                <i class='bx bxs-star' ></i>
+                                <span>4.7</span>
+                            </div>
+                            <a href="#" class="box-btn"><i class='bx bx-down-arrow-alt' ></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="next-page">
+                <a href="#">Следующая страница</a>
+            </div>
+        </section>
+        <!--Секция с новинками конец-->
+        <!-- <section class="user container" id="autho">
+            <div class="heading">
+                <i class='bx bx-user-circle' ></i>
+                <h2>Авторизация</h2>
+            </div>
+            <div>
+                <main>
+                    <div class="authorization">
+                        <p>Введите имя пользователя</p>
+                    </div>
+                </main>
+            </div>
+            
+        </section> -->
+        
+        <!--Секция с пользователями-->
+        <section class="user container" id="users">
+            <div class="heading">
+                <i class='bx bxs-user-circle' ></i>
+                <h2>Список пользователей</h2>
+            </div>
+            <main>
+                <div class="wrapper">
+                    <!-- Сюда будут вставлены карточны из JSON-файлика с помощью JS -->
+                    <ul class="users"></ul>
+                </div>
+            </main>
+        </section>
+
+        <!--Секция с играми-->
+        <section class="content container" id="allgames">
+            <div class="heading">
+                <i class='bx bxs-coin-stack'></i>
+                <h2>Игры</h2>
+            </div>
+            <div class="main">
+                <div class="dropdown">
+                    <span>Поиск по жанру </span>
+                    <div class="select">
+                        <span class="selected">Все жанры</span>
+                        <div class="caret"></div>
+                    </div>
+                    <ul class="menu-genres">
+                        <li class="active">Все жанры</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="dropdown">
+                    <div class="search-box">
+                        <i class="bx bx-search"></i>
+                        <input type="text" placeholder="Найти игру">
+                    </div>
+                </div>
+                <br>
+                
+                
+            </div>
+            <br>
+            <div class="game-content">
+                <!-- <main>
+                    <div class="wrapper">
+                        
+                        Карточки игр
+                        <div class="games"></div>
+                    </div>
+                </main> -->
+            </div>
+            <div class="empty">
+
+            </div>
+            <br>
+        </section>
+        <!--Копирайт-->
+        <div class="copyright container">
+            <a href="#" class="logo">GAME<span>MANAGER</span></a>
+            <p>&#169; Lyn's_Soft All Right Reserved</p>
+        </div>
+
+        <!--Ссылка на Swiper (слайдер для просмотра популярных игр)-->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <!-- Ссылка на jQuery -->
+        <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!--Поключение скриптов-->
+        <script src="js/main.js"></script>
+        <script src="js/dropdowns.js"></script>
+        <!-- <script src="js/search.js"></script> -->
+        <!-- <script src="js/users.js"></script> -->
+        <script type="module" src="js/admin.js"></script>
+        <!-- <script type="module" src="js/games.js"></script> -->
+        <script type="module" src="js/setupAuth.js"></script>
+        <script type="module" src="js/filter.js"></script>
+        <script type="module" src="js/sort_genres.js"></script>
+    </body>
+</html>

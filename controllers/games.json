@@ -1,0 +1,37 @@
+[
+    {
+        "game": "Subway Surf",
+        "creator": "Коля",
+        "image": "new1.png",
+        "description": "моя новая игра, заходите поиграем вместе",
+        "genres": ["Квест", "Приключения"]
+    },
+    {
+        "game": "Crack it now",
+        "creator": "Маша",
+        "image": "other.jpg",
+        "description": "моя новая игра, заходите поиграем вместе",
+        "genres": ["Квест", "Платформер"]
+    },
+    {
+        "game": "Speed",
+        "creator": "Антон",
+        "image": "003.jpg",
+        "description": "моя новая игра, заходите поиграем вместе",
+        "genres": ["Гонки", "Спортивные", "Симулятор"]
+    },
+    {
+        "game": "Dress & Look",
+        "creator": "Коля",
+        "image": "rpg.jpg",
+        "description": "моя новая игра, заходите поиграем вместе",
+        "genres": ["Детские", "Одевалки", "Симулятор"]
+    },
+    {
+        "game": "Adventurer Blake",
+        "creator": "Маша",
+        "image": "008.jpeg",
+        "description": "моя новая игра, заходите поиграем вместе",
+        "genres": ["Приключения"]
+    }
+]
